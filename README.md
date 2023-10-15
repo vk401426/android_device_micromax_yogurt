@@ -18,3 +18,13 @@ Display | 1080 x 2400 pixels,6.67 inches, IPS LCD, 450 nits,  20:9 ratio (~395 p
 Rear Camera  | Quad: 48 MP, f/1.8, 26mm (wide),5 MP, f/2.2, 115 (ultrawide), 2 MP (macro) , 2 MP (depth)
 Front Camera | 16 MP, f/2.0, 27mm (wide), 1/3.06", 1.0m
 Release Month | 2020, November 24
+
+
+Rom building guides 
+some packages are not included in rom like wallpapers,Aperture
+for that we need to add
+/vendor/lineage/config/crdroid.mk
+PRODUCT PACAKAGE = \
+   Aperture \
+   ..
+   ;;
