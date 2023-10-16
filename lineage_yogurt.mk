@@ -8,8 +8,8 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit some common lineageOS stuff.
-$(call inherit-product, vendor/lineage/config/common.mk)
+# Inherit some common Rising stuff.
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 # Inherit from E7746 device
 $(call inherit-product, device/micromax/yogurt/device.mk)
@@ -26,3 +26,31 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     PRIVATE_BUILD_DESC="full_k69v1_64-user 10 QP1A.190711.020 1620836268 release-keys"
 
 BUILD_FINGERPRINT := Micromax/E7746/E7746:10/QP1A.190711.020/1620836268:user/release-keys
+
+# Spoof build description/fingerprint as pixel device
+TARGET_USE_PIXEL_FINGERPRINT := true
+
+# Pixel
+WITH_GMS := false
+TARGET_CORE_GMS := false
+TARGET_CORE_GMS_EXTRAS := false
+TARGET_USE_GOOGLE_TELEPHONY := false
+TARGET_SUPPORTS_NEXT_GEN_ASSISTANT := true
+
+# Package Type
+RISING_PACKAGE_TYPE := Gapps
+
+# Official
+RISING_MAINTAINER := Chandrakant
+
+# Graphene Camera
+TARGET_BUILD_GRAPHENEOS_CAMERA := false
+
+# AudioFx
+TARGET_EXCLUDES_AUDIOFX := true
+
+# Aperture Camera
+TARGET_BUILD_APERTURE_CAMERA := true
+
+# UDFPS ICONS/ANIMATIONS
+TARGET_HAS_UDFPS := false
