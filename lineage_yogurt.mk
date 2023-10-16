@@ -27,10 +27,13 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 
 BUILD_FINGERPRINT := Micromax/E7746/E7746:10/QP1A.190711.020/1620836268:user/release-keys
 
+# Gapps (Using Arrow Gapps)
+$(call inherit-product, vendor/gapps/common/common-vendor.mk)
+
 # Spoof build description/fingerprint as pixel device
 TARGET_USE_PIXEL_FINGERPRINT := true
 
-# Pixel
+# Pixel (Disabled caused bootloop)
 WITH_GMS := false
 TARGET_CORE_GMS := false
 TARGET_CORE_GMS_EXTRAS := false
